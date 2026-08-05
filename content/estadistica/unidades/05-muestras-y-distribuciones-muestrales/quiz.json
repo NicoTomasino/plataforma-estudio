@@ -1,0 +1,104 @@
+{
+  "preguntas": [
+    {
+      "id": "u5-p1",
+      "enunciado": "Para que X₁,...,Xₙ formen una muestra aleatoria simple (iid), se requiere que:",
+      "opciones": [
+        "Sean dependientes y con distinta distribución",
+        "Sean independientes y todas tengan la misma distribución de probabilidad",
+        "Tengan distinta media",
+        "n sea mayor a 30"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "iid significa independientes e idénticamente distribuidas: las Xᵢ deben ser independientes entre sí y compartir la misma distribución."
+    },
+    {
+      "id": "u5-p2",
+      "enunciado": "Un estadístico es:",
+      "opciones": [
+        "Una característica de la población",
+        "Una cantidad calculada a partir de los datos de la muestra, y por lo tanto una variable aleatoria",
+        "Siempre igual al parámetro poblacional que estima",
+        "Un valor fijo, no aleatorio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un estadístico se calcula a partir de la muestra; como la muestra es aleatoria, el estadístico también lo es."
+    },
+    {
+      "id": "u5-p3",
+      "enunciado": "Según la Ley de los grandes números, a medida que aumenta el tamaño de la muestra:",
+      "opciones": [
+        "El promedio muestral se aleja del promedio poblacional",
+        "El promedio muestral se acerca (converge) al promedio poblacional",
+        "La varianza del promedio aumenta sin límite",
+        "No hay ninguna relación entre ambos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La ley de los grandes números garantiza que el promedio muestral converge al promedio poblacional cuando n crece."
+    },
+    {
+      "id": "u5-p4",
+      "enunciado": "Según el Teorema Central del Límite, para n suficientemente grande (regla empírica n>30), la distribución de (X̄ − μ)/(σ/√n) es aproximadamente:",
+      "opciones": ["Binomial", "Uniforme", "N(0,1)", "Exponencial"],
+      "respuestaCorrecta": 2,
+      "explicacion": "El TCL establece que esta variable estandarizada tiende a una distribución normal estándar cuando n es grande."
+    },
+    {
+      "id": "u5-p5",
+      "enunciado": "¿Cuál es la principal importancia práctica del Teorema Central del Límite?",
+      "opciones": [
+        "Permite calcular la media exacta de cualquier población sin muestrear",
+        "Permite aproximar la distribución de X̄ por una normal sin importar la forma de la distribución poblacional de origen",
+        "Solo aplica cuando la población ya es normal",
+        "Elimina la necesidad de tomar muestras"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El TCL asegura que, para n grande, la distribución de muestreo de la media se aproxima a la normal sin importar la distribución de la población original."
+    },
+    {
+      "id": "u5-p6",
+      "enunciado": "Para aproximar una distribución Binomial por la Normal, ¿qué condición se pide sobre n y p, según la regla vista en la unidad?",
+      "opciones": ["n·p ≥ 10 y n·(1−p) ≥ 10", "n > 100 siempre", "p = 0,5 exactamente", "n < 30"],
+      "respuestaCorrecta": 0,
+      "explicacion": "La regla empírica para que la aproximación normal a la Binomial sea buena es n·p ≥ 10 y n·(1−p) ≥ 10."
+    },
+    {
+      "id": "u5-p7",
+      "enunciado": "¿Para qué se usa la 'corrección por continuidad' al aproximar una distribución Binomial con la Normal?",
+      "opciones": [
+        "Para redondear la media poblacional",
+        "Porque se aproxima una distribución discreta con una continua, y hay que ajustar los límites en 0,5",
+        "Porque la varianza cambia de signo",
+        "No tiene ningún propósito práctico, es solo una convención"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Como en una v.a. continua P(X=x)=0, para aproximar probabilidades puntuales o de intervalos de una discreta se ajustan los límites en ±0,5."
+    },
+    {
+      "id": "u5-p8",
+      "enunciado": "Si X₁,...,Xₙ es una muestra aleatoria iid con media μ y varianza σ², ¿cuál es la varianza del promedio muestral, V(X̄)?",
+      "opciones": ["σ²", "σ² / n", "σ² · n", "σ² / √n"],
+      "respuestaCorrecta": 1,
+      "explicacion": "V(X̄) = σ²/n, de donde el desvío estándar del promedio es σ_x̄ = σ/√n."
+    },
+    {
+      "id": "u5-p9",
+      "enunciado": "Si la muestra proviene de una población NORMAL, ¿para qué tamaños de muestra n tiene X̄ una distribución exactamente normal?",
+      "opciones": ["Solo si n > 30", "Solo si n es par", "Para cualquier n", "Nunca es exactamente normal"],
+      "respuestaCorrecta": 2,
+      "explicacion": "Si la población de origen ya es normal, X̄ ~ N(μ, σ²/n) exactamente, para cualquier tamaño de muestra n."
+    },
+    {
+      "id": "u5-p10",
+      "enunciado": "El factor de corrección para poblaciones finitas en el cálculo de σ_x̄ se aplica cuando:",
+      "opciones": [
+        "El muestreo es con reemplazo de una población infinita",
+        "El muestreo es sin reemplazo de una población finita de tamaño N",
+        "n es menor que 5",
+        "La población es normal"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El factor √((N−n)/(N−1)) corrige σ_x̄ cuando se muestrea sin reemplazo de una población de tamaño finito N."
+    }
+  ]
+}

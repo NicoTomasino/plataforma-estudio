@@ -1,0 +1,4 @@
+# Cuando tengas tu ID de publisher de Google AdSense (Cuenta > Configuración >
+# Información de la cuenta, formato pub-0000000000000000), descomentá la línea
+# de abajo reemplazando el ID, sin el "# " inicial.
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

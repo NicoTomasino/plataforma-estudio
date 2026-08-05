@@ -1,0 +1,29 @@
+{
+  "preguntas": [
+    {
+      "id": "u4-e1",
+      "enunciado": "Explique qué significa que dos variables aleatorias discretas X e Y sean independientes, y cómo se verifica usando la fmp conjunta y las marginales.",
+      "respuestaModelo": "X e Y son independientes si para todo par de valores (x,y) se cumple que la probabilidad conjunta es igual al producto de las probabilidades marginales: p(x,y) = pₓ(x)·pᵧ(y). Para verificarlo hay que comprobar esta igualdad para TODOS los pares posibles; si falla en al menos un par, las variables son dependientes."
+    },
+    {
+      "id": "u4-e2",
+      "enunciado": "¿Qué diferencia hay entre que la covarianza entre X e Y sea cero y que X e Y sean independientes?",
+      "respuestaModelo": "Si X e Y son independientes, entonces Cov(X,Y)=0. Pero la recíproca no es cierta: Cov(X,Y)=0 solo indica que no hay una relación LINEAL entre las variables; puede existir igualmente una relación no lineal entre ellas, en cuyo caso no serían independientes aunque su covarianza sea cero."
+    },
+    {
+      "id": "u4-e3",
+      "enunciado": "Escriba la fórmula de la varianza de la suma de dos variables aleatorias X e Y, y explique cómo se simplifica cuando son independientes.",
+      "respuestaModelo": "En general, V(X+Y) = V(X) + V(Y) + 2·Cov(X,Y). Cuando X e Y son independientes, Cov(X,Y)=0, por lo que la fórmula se simplifica a V(X+Y) = V(X) + V(Y)."
+    },
+    {
+      "id": "u4-e4",
+      "enunciado": "En el modelo de regresión lineal simple ajustado por mínimos cuadrados, ¿qué principio se usa para estimar los parámetros A (ordenada) y B (pendiente), y qué representa cada uno en la recta ŷ = A + Bx?",
+      "respuestaModelo": "Se usa el principio de mínimos cuadrados: A y B son los valores que minimizan la suma de los cuadrados de los errores (residuos) entre los valores observados yᵢ y los valores estimados por la recta, A+Bxᵢ. En la recta resultante, A es la ordenada al origen (el valor estimado de y cuando x=0) y B es la pendiente (cuánto cambia, en promedio, el valor esperado de y por cada unidad que aumenta x)."
+    },
+    {
+      "id": "u4-e5",
+      "enunciado": "¿Qué información aporta el coeficiente de determinación r² sobre un modelo de regresión lineal simple, y cómo se relaciona con el coeficiente de correlación de Pearson?",
+      "respuestaModelo": "r² mide la proporción de la variabilidad total de la variable dependiente Y que es explicada por el modelo de regresión (se expresa habitualmente en porcentaje). Cuanto más cercano a 1 (o 100%), mejor explica el modelo la variación de y. En una regresión lineal simple entre dos variables, r² es numéricamente igual al cuadrado del coeficiente de correlación de Pearson entre X e Y."
+    }
+  ]
+}

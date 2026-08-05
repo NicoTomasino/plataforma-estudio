@@ -1,0 +1,94 @@
+{
+  "preguntas": [
+    {
+      "id": "u6-p1",
+      "enunciado": "¿Cuál es la diferencia entre una estimación puntual y una estimación por intervalo?",
+      "opciones": [
+        "La puntual es un solo número; la de intervalo es un rango de valores con un nivel de confianza asociado",
+        "Son exactamente lo mismo, solo cambia el nombre",
+        "La estimación por intervalo no usa datos muestrales",
+        "La estimación puntual siempre es más precisa que la de intervalo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La estimación puntual da un único número; la de intervalo da un rango junto con un nivel de confianza, lo que aporta información sobre la precisión de la estimación."
+    },
+    {
+      "id": "u6-p2",
+      "enunciado": "Un estimador θ̂ es insesgado si:",
+      "opciones": ["V(θ̂) = 0", "E(θ̂) = θ para todo valor posible de θ", "θ̂ es siempre igual a θ", "n > 30"],
+      "respuestaCorrecta": 1,
+      "explicacion": "Insesgamiento significa que el valor esperado del estimador coincide con el parámetro que estima, para todo valor posible de ese parámetro."
+    },
+    {
+      "id": "u6-p3",
+      "enunciado": "¿Por qué se divide por (n−1) en lugar de n al calcular la varianza muestral s²?",
+      "opciones": [
+        "Porque da un número más grande y eso es preferible",
+        "Porque hace que s² sea un estimador insesgado de σ²",
+        "Es una convención arbitraria, sin ningún motivo estadístico",
+        "Porque n siempre es un número par"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Dividiendo por n el estimador resulta sesgado (con sesgo −σ²/n); dividiendo por (n−1) se corrige ese sesgo y E(S²)=σ²."
+    },
+    {
+      "id": "u6-p4",
+      "enunciado": "Un estimador es consistente si:",
+      "opciones": [
+        "Su varianza aumenta a medida que crece n",
+        "Al aumentar el tamaño de la muestra, el estadístico se aproxima cada vez más al parámetro poblacional",
+        "Siempre es insesgado, sin excepción",
+        "No depende del tamaño de la muestra"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Consistencia: lim(n→∞) P(|θ̂−θ|>ε) = 0, es decir, el estimador se acerca al parámetro con muestras más grandes."
+    },
+    {
+      "id": "u6-p5",
+      "enunciado": "Para construir un intervalo de confianza para μ cuando la población es normal, σ es DESCONOCIDA y n es PEQUEÑO, ¿qué distribución se utiliza?",
+      "opciones": ["Normal estándar (Z)", "Distribución t de Student con n−1 grados de libertad", "Distribución Binomial", "Distribución de Poisson"],
+      "respuestaCorrecta": 1,
+      "explicacion": "Con σ desconocida y n pequeño, T=(X̄−μ)/(s/√n) sigue una distribución t con n−1 grados de libertad (Caso 4)."
+    },
+    {
+      "id": "u6-p6",
+      "enunciado": "Si se aumenta el nivel de confianza (por ejemplo, de 90% a 99%) manteniendo el mismo tamaño de muestra, el ancho del intervalo de confianza:",
+      "opciones": ["Se achica", "Se agranda", "No cambia", "Se vuelve cero"],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ancho w = 2·z_(α/2)·σ/√n; a mayor nivel de confianza, mayor z_(α/2), y por lo tanto mayor ancho, para un n fijo."
+    },
+    {
+      "id": "u6-p7",
+      "enunciado": "Para reducir a la mitad el ancho de un intervalo de confianza para μ, manteniendo el mismo nivel de confianza, ¿aproximadamente cuánto hay que aumentar el tamaño de muestra n?",
+      "opciones": ["Duplicarlo", "Cuadruplicarlo (multiplicarlo por 4)", "No hace falta cambiar n", "Reducirlo a la mitad"],
+      "respuestaCorrecta": 1,
+      "explicacion": "Como n es inversamente proporcional al cuadrado del ancho w, para reducir w a la mitad hay que multiplicar n por 4."
+    },
+    {
+      "id": "u6-p8",
+      "enunciado": "El intervalo de confianza para la varianza de una población normal se basa en la distribución:",
+      "opciones": ["Normal", "t de Student", "Ji-cuadrado (χ²)", "Binomial"],
+      "respuestaCorrecta": 2,
+      "explicacion": "Se usa que (n−1)·S²/σ² tiene distribución χ² con n−1 grados de libertad, cuando la muestra proviene de una población normal."
+    },
+    {
+      "id": "u6-p9",
+      "enunciado": "En un intervalo de confianza UNILATERAL (por ejemplo, solo un límite inferior para μ), ¿qué valor crítico se usa en lugar de z_(α/2)?",
+      "opciones": ["z_α", "z_(α/4)", "2·z_(α/2)", "Siempre se usa t, nunca z"],
+      "respuestaCorrecta": 0,
+      "explicacion": "En los intervalos unilaterales, se reemplaza z_(α/2) por z_α (o t_(α/2,n−1) por t_(α,n−1))."
+    },
+    {
+      "id": "u6-p10",
+      "enunciado": "El intervalo de confianza para la varianza (o desviación estándar) de una población, basado en la distribución χ²:",
+      "opciones": [
+        "Es válido para cualquier distribución poblacional, sin excepción",
+        "Solo es válido si la población de origen es normal",
+        "Solo es válido si n > 100",
+        "No requiere ningún supuesto sobre la población"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "A diferencia de los intervalos para la media con muestra grande (válidos gracias al TLC para cualquier distribución), el de la varianza requiere que la población de origen sea normal."
+    }
+  ]
+}

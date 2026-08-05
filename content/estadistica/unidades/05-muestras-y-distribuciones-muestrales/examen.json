@@ -1,0 +1,29 @@
+{
+  "preguntas": [
+    {
+      "id": "u5-e1",
+      "enunciado": "Explique la diferencia entre un parámetro y un estadístico, y por qué se dice que un estadístico es una variable aleatoria.",
+      "respuestaModelo": "Un parámetro es una característica de la población (por ejemplo, la media poblacional μ), mientras que un estadístico es una cantidad calculada a partir de los datos de una muestra (por ejemplo, la media muestral X̄). Un estadístico es una variable aleatoria porque, antes de tomar la muestra, no se sabe qué valores concretos tendrán las observaciones, por lo que el valor que tomará el estadístico también es incierto hasta que se obtienen los datos."
+    },
+    {
+      "id": "u5-e2",
+      "enunciado": "Enuncie el Teorema Central del Límite y explique por qué se lo considera uno de los resultados más importantes de la inferencia estadística.",
+      "respuestaModelo": "Si X₁,...,Xₙ son v.a. iid con media μ y varianza σ² finitas, entonces para n suficientemente grande (regla empírica: n>30), la variable estandarizada (X̄−μ)/(σ/√n) tiene distribución aproximadamente N(0,1). Es tan importante porque garantiza que la distribución de muestreo de la media se aproxima a la normal sin importar la forma de la distribución poblacional de origen, lo que permite hacer inferencias sobre los parámetros de una población usando estadísticas muestrales, aun sin conocer completamente la distribución de esa población."
+    },
+    {
+      "id": "u5-e3",
+      "enunciado": "¿Cómo se relacionan la esperanza y la varianza del promedio muestral X̄ con la media μ y la varianza σ² de la población de la que proviene la muestra (muestra aleatoria iid de tamaño n)?",
+      "respuestaModelo": "E(X̄) = μ (el valor esperado del promedio muestral coincide con la media poblacional) y V(X̄) = σ²/n (la varianza del promedio muestral es la varianza poblacional dividida por el tamaño de la muestra). De ahí que el desvío estándar del promedio muestral sea σ_x̄ = σ/√n."
+    },
+    {
+      "id": "u5-e4",
+      "enunciado": "¿Bajo qué condición la distribución de X̄ es EXACTAMENTE normal para cualquier tamaño de muestra n, y bajo qué condición es solo APROXIMADAMENTE normal?",
+      "respuestaModelo": "Si la población de la que se muestrea ya es normal, entonces X̄ tiene distribución exactamente normal N(μ, σ²/n) para cualquier n, por pequeño que sea. Si la población NO es normal, la distribución de X̄ es solo aproximadamente normal, y esa aproximación mejora a medida que aumenta n (según el Teorema Central del Límite), usándose como regla empírica n>30."
+    },
+    {
+      "id": "u5-e5",
+      "enunciado": "¿Por qué es necesario aplicar el factor de corrección para poblaciones finitas al calcular σ_x̄, y cómo se calcula?",
+      "respuestaModelo": "El Teorema Central del Límite y la fórmula usual σ_x̄=σ/√n suponen muestreo con reemplazo o de una población infinita. Cuando se muestrea SIN reemplazo de una población FINITA de tamaño N, hay que corregir con el factor √((N−n)/(N−1)), quedando σ_x̄ = (σ/√n)·√((N−n)/(N−1)). Este factor reduce la variabilidad estimada, porque al no reponer los elementos extraídos, la muestra 'agota' una porción no despreciable de la población."
+    }
+  ]
+}

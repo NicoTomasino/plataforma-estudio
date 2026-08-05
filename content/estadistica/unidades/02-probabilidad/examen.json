@@ -1,0 +1,29 @@
+{
+  "preguntas": [
+    {
+      "id": "u2-e1",
+      "enunciado": "Un experimento consiste en lanzar un dado. Se sabe que salió un número par. ¿Cuál es la probabilidad de que haya salido un 4? Explique por qué se trata de una probabilidad condicional.",
+      "respuestaModelo": "El espacio muestral se reduce a {2,4,6} porque ya se sabe que el resultado es par, y estos tres resultados son equiprobables, por lo que P(sale 4 / es par) = 1/3. Es una probabilidad condicional porque se recalcula la probabilidad de un suceso (A = 'sale 4') teniendo en cuenta que ya ocurrió otro suceso (B = 'salió par'), usando P(A/B) = P(A∩B) / P(B)."
+    },
+    {
+      "id": "u2-e2",
+      "enunciado": "Explique la diferencia entre una variación y una combinación, y dé un ejemplo de cada una.",
+      "respuestaModelo": "En una variación importa el orden de los elementos elegidos: por ejemplo, repartir 3 regalos DISTINTOS entre 5 niños, donde importa qué regalo específico recibe cada uno. En una combinación no importa el orden, solo qué elementos quedan seleccionados: por ejemplo, repartir 3 regalos IGUALES entre 5 niños, donde solo importa quiénes reciben un regalo, no cuál."
+    },
+    {
+      "id": "u2-e3",
+      "enunciado": "Enuncie la regla de la multiplicación de probabilidades y explique para qué se usa.",
+      "respuestaModelo": "La regla de la multiplicación dice que P(A∩B) = P(A/B)·P(B), o equivalentemente P(A∩B) = P(B/A)·P(A). Se usa porque en muchos problemas se conocen directamente la probabilidad condicional (por ejemplo P(A/B)) y la probabilidad de B a partir del enunciado, y lo que se busca calcular es la probabilidad de la intersección P(A∩B), que no siempre es evidente a partir de los datos."
+    },
+    {
+      "id": "u2-e4",
+      "enunciado": "¿Qué condición deben cumplir los eventos A₁,...,Aₖ para poder aplicar la Ley de la Probabilidad Total, y cuál es la fórmula?",
+      "respuestaModelo": "Los eventos A₁,...,Aₖ deben ser mutuamente excluyentes (no comparten elementos entre sí) y exhaustivos (su unión cubre todo el espacio muestral). En ese caso, para cualquier evento B: P(B) = P(B/A₁)·P(A₁) + P(B/A₂)·P(A₂) + ... + P(B/Aₖ)·P(Aₖ)."
+    },
+    {
+      "id": "u2-e5",
+      "enunciado": "Dos sucesos A y B tienen P(A) = 0,3 y P(B) = 0,4, y son independientes. Calcule P(A∩B) y P(A∪B).",
+      "respuestaModelo": "Como son independientes, P(A∩B) = P(A)·P(B) = 0,3 · 0,4 = 0,12. Luego, P(A∪B) = P(A) + P(B) − P(A∩B) = 0,3 + 0,4 − 0,12 = 0,58."
+    }
+  ]
+}

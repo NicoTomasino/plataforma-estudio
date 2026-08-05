@@ -1,0 +1,29 @@
+{
+  "preguntas": [
+    {
+      "id": "u1-e1",
+      "enunciado": "¿Cuál es la diferencia entre un parámetro y un estadístico? Dé un ejemplo.",
+      "respuestaModelo": "Un parámetro es una función definida sobre los valores numéricos de una población, mientras que un estadístico es una función definida sobre los valores numéricos de una muestra. Por ejemplo, si se estudia la edad media de los estudiantes de una universidad, la edad media de TODOS los estudiantes es un parámetro, mientras que la edad media calculada sobre una muestra de 10 alumnos por carrera es un estadístico."
+    },
+    {
+      "id": "u1-e2",
+      "enunciado": "Explique la diferencia entre variables cualitativas, cuasicuantitativas y cuantitativas, y dentro de estas últimas, entre discretas y continuas.",
+      "respuestaModelo": "Las variables cualitativas tienen modalidades de tipo nominal, sin orden entre ellas. Las cuasicuantitativas también son de tipo nominal pero admiten establecer un orden entre sus modalidades. Las cuantitativas toman cantidades numéricas con las que se puede operar aritméticamente; dentro de ellas, las discretas toman valores enteros y las continuas toman valores reales."
+    },
+    {
+      "id": "u1-e3",
+      "enunciado": "¿Por qué se dice que la media aritmética es muy sensible a valores extremos, mientras que la mediana no lo es? ¿Qué desventaja tiene la mediana frente a la media?",
+      "respuestaModelo": "La media toma en cuenta todos los valores de la distribución en su cálculo, por lo que un valor extremo puede modificar fuertemente su resultado. La mediana, en cambio, solo depende de la posición central de los datos ordenados, así que no se ve afectada por observaciones extremas. Sin embargo, la mediana tiene propiedades matemáticas más complicadas que la media, lo que dificulta su uso en inferencia estadística."
+    },
+    {
+      "id": "u1-e4",
+      "enunciado": "Un conjunto de datos tiene Q1 = 10, Q2 = 15, Q3 = 22. Calcule el índice de asimetría de Yule-Bowley e interprete el resultado.",
+      "respuestaModelo": "As = ((Q3 − Q2) − (Q2 − Q1)) / (Q3 − Q1) = ((22 − 15) − (15 − 10)) / (22 − 10) = (7 − 5) / 12 = 2/12 ≈ 0,17. Como As es positivo, la distribución es asimétrica positiva (cola hacia la derecha, con las frecuencias más altas concentradas a la izquierda de la mediana)."
+    },
+    {
+      "id": "u1-e5",
+      "enunciado": "¿Qué diferencia hay entre un valor atípico moderado y uno extremo, según el criterio basado en la cuarta dispersión (fs)?",
+      "respuestaModelo": "Un valor atípico moderado está más allá de 1,5·fs del cuartil más cercano, pero a menos de 3·fs. Un valor atípico extremo está más allá de 3·fs del cuartil más cercano."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "preguntas": [
+    {
+      "id": "u4-p1",
+      "enunciado": "Para que p(x,y) sea una función de masa de probabilidad conjunta válida, se debe cumplir que:",
+      "opciones": [
+        "p(x,y) puede ser negativa si es pequeña",
+        "p(x,y) ≥ 0 para todo par (x,y), y la suma de todas las p(x,y) es igual a 1",
+        "p(x,y) = pₓ(x) siempre",
+        "La suma de todas las p(x,y) debe ser menor que 1"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Igual que en el caso de una variable: todos los valores deben ser ≥ 0, y la suma de las probabilidades de todos los pares posibles debe dar exactamente 1."
+    },
+    {
+      "id": "u4-p2",
+      "enunciado": "La distribución marginal de X, pₓ(x), se obtiene a partir de la fmp conjunta:",
+      "opciones": [
+        "Multiplicando p(x,y) por pᵧ(y)",
+        "Sumando p(x,y) sobre todos los valores posibles de y",
+        "Derivando p(x,y) respecto de x",
+        "Es siempre igual a p(x,y)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "pₓ(x) = Σᵧ p(x,y): se suma la probabilidad conjunta sobre todos los valores de la otra variable."
+    },
+    {
+      "id": "u4-p3",
+      "enunciado": "Dos v.a. discretas X e Y son independientes si y solo si:",
+      "opciones": [
+        "p(x,y) = 0 para todo par",
+        "p(x,y) = pₓ(x) + pᵧ(y) para todo par",
+        "p(x,y) = pₓ(x) · pᵧ(y) para todo par",
+        "Cov(X,Y) > 0"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La definición de independencia exige que la fmp conjunta sea el producto de las marginales para TODO par de valores."
+    },
+    {
+      "id": "u4-p4",
+      "enunciado": "La función de masa de probabilidad condicional de Y dado que X=x se calcula como:",
+      "opciones": [
+        "p(x,y) / pₓ(x)",
+        "pₓ(x) / p(x,y)",
+        "p(x,y) · pₓ(x)",
+        "p(x,y) − pₓ(x)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "p_{Y/X}(y/x) = p(x,y) / pₓ(x), válida para pₓ(x) > 0."
+    },
+    {
+      "id": "u4-p5",
+      "enunciado": "Si X e Y son variables aleatorias independientes, ¿cuál de las siguientes igualdades es correcta?",
+      "opciones": [
+        "E(X·Y) = E(X) + E(Y)",
+        "E(X·Y) = E(X) · E(Y)",
+        "E(X+Y) = E(X) · E(Y)",
+        "Cov(X,Y) = Var(X)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Si X e Y son independientes, E(X·Y) = E(X)·E(Y). (E(X+Y)=E(X)+E(Y) vale siempre, sin necesidad de independencia.)"
+    },
+    {
+      "id": "u4-p6",
+      "enunciado": "La covarianza Cov(X,Y) se puede calcular como:",
+      "opciones": [
+        "E(X)·E(Y) − E(X·Y)",
+        "E(X·Y) − E(X)·E(Y)",
+        "Var(X) + Var(Y)",
+        "E(X+Y)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Cov(X,Y) = E[(X−μₓ)(Y−μᵧ)] = E(X·Y) − E(X)·E(Y)."
+    },
+    {
+      "id": "u4-p7",
+      "enunciado": "Si Cov(X,Y) = 0, ¿qué se puede afirmar con certeza?",
+      "opciones": [
+        "X e Y son necesariamente independientes",
+        "No existe una relación LINEAL entre X e Y, pero podrían estar relacionadas de otra forma",
+        "X e Y tienen la misma varianza",
+        "X e Y son la misma variable"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Cov(X,Y)=0 indica ausencia de relación lineal, pero no implica independencia: puede haber una relación no lineal entre las variables."
+    },
+    {
+      "id": "u4-p8",
+      "enunciado": "¿Cuál es el rango de valores posibles del coeficiente de correlación de Pearson ρ(X,Y)?",
+      "opciones": ["[0, 1]", "[−1, 1]", "(−∞, +∞)", "[−1, 0]"],
+      "respuestaCorrecta": 1,
+      "explicacion": "Para cualquier par de v.a. X e Y, −1 ≤ ρ(X,Y) ≤ 1."
+    },
+    {
+      "id": "u4-p9",
+      "enunciado": "En el modelo de regresión lineal simple Y = α + βx + ε, ¿qué representa el término ε?",
+      "opciones": [
+        "La pendiente de la recta",
+        "El error aleatorio, que se asume con distribución N(0, σ²)",
+        "El coeficiente de correlación",
+        "El valor esperado de Y"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "ε es el error aleatorio: la diferencia entre el valor observado de Y y el valor esperado según la recta poblacional, para una x fija. Se supone ε~N(0,σ²)."
+    },
+    {
+      "id": "u4-p10",
+      "enunciado": "El coeficiente de determinación r² mide:",
+      "opciones": [
+        "La pendiente de la recta de regresión",
+        "La proporción de la variabilidad de Y explicada por el modelo de regresión",
+        "La covarianza entre X e Y",
+        "El número de observaciones utilizadas en el análisis"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "r² = 1 − SSE/SST mide qué proporción de la variabilidad total de Y es explicada por el modelo lineal ajustado."
+    }
+  ]
+}

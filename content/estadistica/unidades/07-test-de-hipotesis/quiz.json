@@ -1,0 +1,109 @@
+{
+  "preguntas": [
+    {
+      "id": "u7-p1",
+      "enunciado": "La hipótesis nula H₀ representa:",
+      "opciones": [
+        "La aseveración contradictoria que se quiere probar",
+        "La pretensión que inicialmente se supone cierta, y que solo se rechaza con evidencia fuerte en contra",
+        "Siempre la hipótesis que el investigador quiere demostrar",
+        "Un valor calculado directamente a partir de la muestra"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "H₀ es la creencia previa: se rechaza solo si la evidencia muestral la contradice fuertemente."
+    },
+    {
+      "id": "u7-p2",
+      "enunciado": "Un error de tipo I consiste en:",
+      "opciones": [
+        "No rechazar H₀ cuando es falsa",
+        "Rechazar H₀ cuando es verdadera",
+        "Rechazar H₁ cuando es verdadera",
+        "Aceptar H₀ con total certeza"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Error de tipo I = rechazar H₀ siendo verdadera; su probabilidad se denota α."
+    },
+    {
+      "id": "u7-p3",
+      "enunciado": "Un error de tipo II consiste en:",
+      "opciones": [
+        "Rechazar H₀ cuando es verdadera",
+        "No rechazar H₀ cuando es falsa",
+        "Rechazar H₁ cuando es falsa",
+        "Calcular mal el estadístico de prueba"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Error de tipo II = no rechazar H₀ siendo falsa; su probabilidad se denota β."
+    },
+    {
+      "id": "u7-p4",
+      "enunciado": "¿Por qué se considera, en general, más grave el error de tipo I que el de tipo II?",
+      "opciones": [
+        "Porque H₀ es la hipótesis que se supone cierta a priori, y rechazarla erróneamente suele tener consecuencias más serias",
+        "Porque el error de tipo II nunca ocurre en la práctica",
+        "Porque α siempre es matemáticamente mayor que β",
+        "No hay ninguna diferencia de gravedad entre ambos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Como H₀ es la creencia previa, rechazarla injustamente (error de tipo I) se considera el error más costoso."
+    },
+    {
+      "id": "u7-p5",
+      "enunciado": "El 'nivel de significación' de una prueba de hipótesis es:",
+      "opciones": ["El valor de β", "El valor máximo tolerado de α, fijado de antemano", "El tamaño de la muestra", "El valor del estadístico observado"],
+      "respuestaCorrecta": 1,
+      "explicacion": "El método habitual es fijar el mayor valor de α que se está dispuesto a tolerar; ese valor es el nivel de significación."
+    },
+    {
+      "id": "u7-p6",
+      "enunciado": "Para probar H₀: μ=μ₀ cuando la población es normal, σ es DESCONOCIDA y n es pequeño, ¿qué estadístico de prueba se usa?",
+      "opciones": [
+        "z = (x̄−μ₀)/(σ/√n)",
+        "t = (x̄−μ₀)/(s/√n), con distribución t de n−1 grados de libertad",
+        "χ² = (n−1)·s²/σ₀²",
+        "z = (p̂−p₀)/√(p₀(1−p₀)/n)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Con σ desconocida y n pequeño (población normal), el estadístico t=(x̄−μ₀)/(s/√n) sigue una distribución t con n−1 grados de libertad."
+    },
+    {
+      "id": "u7-p7",
+      "enunciado": "Para que la prueba de hipótesis sobre una proporción p (con muestra grande) sea válida, se requiere que:",
+      "opciones": ["n > 1000", "n·p₀ ≥ 10 y n·(1−p₀) ≥ 10", "p₀ = 0,5 exactamente", "n sea un número impar"],
+      "respuestaCorrecta": 1,
+      "explicacion": "Es la misma condición que garantiza la aproximación normal a la Binomial vista en unidades anteriores."
+    },
+    {
+      "id": "u7-p8",
+      "enunciado": "La prueba de hipótesis sobre la varianza de una población (H₀: σ=σ₀) usa el estadístico:",
+      "opciones": [
+        "z = (x̄−μ₀)/(σ/√n)",
+        "t = (x̄−μ₀)/(s/√n)",
+        "χ² = (n−1)·s²/σ₀², válido si la población es normal",
+        "F = s₁²/s₂²"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El estadístico (n−1)·s²/σ₀² sigue una distribución χ² con n−1 grados de libertad, válida solo si la muestra proviene de una población normal."
+    },
+    {
+      "id": "u7-p9",
+      "enunciado": "En el test de utilidad del modelo de regresión (H₀: β=0 vs H₁: β≠0), si se RECHAZA H₀, ¿qué se concluye?",
+      "opciones": [
+        "Que no existe relación entre X e Y",
+        "Que hay evidencia estadística de que sí existe una relación lineal (regresión) entre X e Y",
+        "Que el modelo de regresión no sirve para nada",
+        "Que hay que aumentar el tamaño de la muestra"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Rechazar H₀:β=0 significa que hay evidencia de que la pendiente poblacional no es cero, es decir, que existe relación lineal entre las variables."
+    },
+    {
+      "id": "u7-p10",
+      "enunciado": "Si se reduce α (por ejemplo, de 0,05 a 0,01) sin cambiar el tamaño de muestra, ¿qué ocurre generalmente con β?",
+      "opciones": ["β disminuye", "β aumenta", "β no cambia", "β se vuelve cero"],
+      "respuestaCorrecta": 1,
+      "explicacion": "Reducir la región de rechazo (menor α) implica, para un tamaño de muestra fijo, un β mayor."
+    }
+  ]
+}

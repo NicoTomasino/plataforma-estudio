@@ -1,0 +1,13 @@
+{
+  "nombre": "Estadística",
+  "descripcion": "Estadística descriptiva e inferencial — UNNOBA (Prof. Ma. Eugenia Gallardo).",
+  "unidades": [
+    { "id": "01-estadistica-descriptiva", "titulo": "Estadística descriptiva" },
+    { "id": "02-probabilidad", "titulo": "Estadística inferencial: probabilidad" },
+    { "id": "03-variable-aleatoria", "titulo": "Variable aleatoria" },
+    { "id": "04-variables-aleatorias-conjuntas", "titulo": "Análisis conjunto de variables aleatorias discretas" },
+    { "id": "05-muestras-y-distribuciones-muestrales", "titulo": "Muestras y distribuciones muestrales" },
+    { "id": "06-estimacion", "titulo": "Estimación" },
+    { "id": "07-test-de-hipotesis", "titulo": "Test de hipótesis" }
+  ]
+}

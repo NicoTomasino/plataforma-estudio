@@ -1,0 +1,94 @@
+{
+  "preguntas": [
+    {
+      "id": "u2-p1",
+      "enunciado": "¿Qué es el espacio muestral de un experimento aleatorio?",
+      "opciones": ["El suceso más probable", "El conjunto de todos los resultados posibles", "La probabilidad de cada suceso", "El suceso contrario a todos los demás"],
+      "respuestaCorrecta": 1,
+      "explicacion": "El espacio muestral (E) es el conjunto de todos los posibles resultados de una experiencia aleatoria."
+    },
+    {
+      "id": "u2-p2",
+      "enunciado": "Según la Regla de Laplace, ¿bajo qué condición se puede calcular P(A) como 'casos favorables / casos posibles'?",
+      "opciones": [
+        "Siempre, para cualquier experimento",
+        "Cuando el experimento tiene un número finito de resultados posibles, todos equiprobables",
+        "Solo cuando A y B son independientes",
+        "Solo si P(A) > 0,5"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La regla de Laplace requiere un número finito de resultados posibles y que todos sean equiprobables."
+    },
+    {
+      "id": "u2-p3",
+      "enunciado": "¿Cuál de las siguientes es uno de los tres axiomas de la probabilidad?",
+      "opciones": ["P(A) = P(B) siempre", "P(E) = 1", "P(A∩B) = P(A) + P(B) siempre", "P(∅) = 1"],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los axiomas son: 0≤P(A)≤1, P(E)=1, y si A y B son incompatibles P(A∪B)=P(A)+P(B)."
+    },
+    {
+      "id": "u2-p4",
+      "enunciado": "Se reparten 3 regalos DISTINTOS entre 5 niños (cada niño recibe como máximo uno, e importa qué regalo específico recibe cada uno). ¿Qué técnica de conteo corresponde?",
+      "opciones": ["Combinaciones", "Variaciones", "Permutaciones con repetición", "Combinaciones con repetición"],
+      "respuestaCorrecta": 1,
+      "explicacion": "Como los regalos son distintos y el orden/asignación importa, se usan variaciones: V₅³ = 5!/(5−3)! = 60."
+    },
+    {
+      "id": "u2-p5",
+      "enunciado": "La probabilidad condicional de A dado B, P(A/B), se define como:",
+      "opciones": ["P(A) + P(B)", "P(A∩B) / P(B)", "P(A) / P(B)", "P(A∪B) / P(B)"],
+      "respuestaCorrecta": 1,
+      "explicacion": "P(A/B) = P(A∩B) / P(B), válida para P(B) > 0."
+    },
+    {
+      "id": "u2-p6",
+      "enunciado": "Dos sucesos A y B son independientes si y solo si:",
+      "opciones": ["P(A∩B) = 0", "P(A∩B) = P(A) + P(B)", "P(A∩B) = P(A) · P(B)", "P(A/B) = 1"],
+      "respuestaCorrecta": 2,
+      "explicacion": "A y B son independientes si P(A/B)=P(A), lo que equivale a P(A∩B) = P(A)·P(B)."
+    },
+    {
+      "id": "u2-p7",
+      "enunciado": "Para aplicar la Ley de la Probabilidad Total con eventos A₁,...,Aₖ, estos deben ser:",
+      "opciones": ["Independientes entre sí", "Mutuamente excluyentes y exhaustivos", "Todos con la misma probabilidad", "Sucesos compuestos"],
+      "respuestaCorrecta": 1,
+      "explicacion": "La ley de la probabilidad total requiere que los Aᵢ sean mutuamente excluyentes y exhaustivos (cubran todo el espacio muestral)."
+    },
+    {
+      "id": "u2-p8",
+      "enunciado": "El Teorema de Bayes permite calcular:",
+      "opciones": [
+        "La probabilidad de la unión de dos sucesos",
+        "Probabilidades condicionales 'inversas' (posteriores), a partir de la regla de la multiplicación y la probabilidad total",
+        "El número de combinaciones posibles de un conjunto",
+        "La media de una distribución de frecuencias"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Bayes es una aplicación de la regla de la multiplicación y la ley de la probabilidad total para obtener P(Aⱼ/B) a partir de P(B/Aᵢ)."
+    },
+    {
+      "id": "u2-p9",
+      "enunciado": "Se lanzan dos dados de forma independiente. A = 'el dado rojo muestra 3', B = 'el dado verde muestra 4'. ¿Son A y B independientes?",
+      "opciones": [
+        "Sí, porque P(A∩B) = P(A) · P(B)",
+        "No, porque comparten el mismo espacio muestral",
+        "No, porque provienen del mismo experimento",
+        "No se puede saber sin más datos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "P(A)=P(B)=1/6 y P(A∩B)=1/36=P(A)·P(B), por lo que son independientes (los dados se lanzan de forma independiente)."
+    },
+    {
+      "id": "u2-p10",
+      "enunciado": "En el ejemplo de los cuatro donantes de sangre, con Aᵢ = 'el donante i tiene sangre 0+' y P(Aᵢ) = 1/4, ¿qué representa P(Āᵢ)?",
+      "opciones": [
+        "La probabilidad de que el donante i NO tenga sangre 0+, que vale 3/4",
+        "La probabilidad de que ningún donante tenga sangre 0+",
+        "La probabilidad de que todos tengan sangre 0+",
+        "El complemento de la muestra completa"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "P(Āᵢ) = 1 − P(Aᵢ) = 1 − 1/4 = 3/4: es la probabilidad de que ESE donante en particular no tenga sangre 0+."
+    }
+  ]
+}

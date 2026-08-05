@@ -1,0 +1,29 @@
+{
+  "preguntas": [
+    {
+      "id": "u3-e1",
+      "enunciado": "Explique qué representa el valor esperado E(X) de una variable aleatoria y qué significa que sea 'el centro de gravedad de la distribución'.",
+      "respuestaModelo": "E(X) es un promedio ponderado de los valores posibles de X, donde cada valor se pondera por su probabilidad. Se interpreta como el punto de equilibrio de la función de probabilidad: si se coloca una masa p(xᵢ) sobre cada valor posible xᵢ, E(X) es el punto donde el sistema queda en equilibrio. También puede pensarse como el valor al que tiende a estabilizarse el promedio de los resultados si se repite el experimento aleatorio indefinidamente."
+    },
+    {
+      "id": "u3-e2",
+      "enunciado": "¿Qué condiciones debe cumplir un experimento para que el número de éxitos en n repeticiones siga una distribución Binomial?",
+      "respuestaModelo": "El experimento debe consistir en n pruebas fijas; las pruebas deben ser idénticas, con solo dos resultados posibles cada una (éxito o fracaso); las pruebas deben ser independientes entre sí; y la probabilidad de éxito p debe mantenerse constante en todas las pruebas."
+    },
+    {
+      "id": "u3-e3",
+      "enunciado": "¿Cuál es la diferencia entre la distribución de Poisson y la distribución Exponencial, si ambas están relacionadas con un mismo proceso de Poisson de parámetro λ?",
+      "respuestaModelo": "La variable de Poisson cuenta el número de eventos (éxitos) que ocurren en un intervalo de longitud fija (por ejemplo, cuántas llamadas llegan en una hora). La variable Exponencial, en cambio, mide el tiempo transcurrido entre dos eventos sucesivos del mismo proceso. Si el proceso de ocurrencia de eventos es Poisson de parámetro λ, el tiempo entre dos eventos sucesivos sigue una distribución Exponencial de parámetro λ."
+    },
+    {
+      "id": "u3-e4",
+      "enunciado": "Si Z es una variable normal estándar, explique cómo se calcula P(a < X < b) cuando X ~ N(μ, σ²), usando la tabla de Z.",
+      "respuestaModelo": "Se estandariza la variable con Z = (X − μ)/σ, que sigue una distribución N(0,1). Entonces P(a < X < b) = P((a−μ)/σ < Z < (b−μ)/σ) = Φ((b−μ)/σ) − Φ((a−μ)/σ), donde Φ es la función de distribución acumulada de la normal estándar, cuyos valores se buscan en la tabla."
+    },
+    {
+      "id": "u3-e5",
+      "enunciado": "Explique la propiedad de 'falta de memoria' de la distribución Exponencial, con un ejemplo.",
+      "respuestaModelo": "La distribución Exponencial no 'recuerda' cuánto tiempo ya transcurrió: la probabilidad de que un evento tarde t unidades de tiempo más en ocurrir, dado que ya pasó un tiempo s sin que ocurra, es igual a la probabilidad de que tarde t unidades desde el inicio. Por ejemplo, si la vida útil de un componente sigue una Exponencial(λ=0,6) y ya funcionó 3 horas, la probabilidad de que dure 2 horas más es la misma que la probabilidad de que un componente nuevo dure más de 2 horas: P(T ≥ 3+2 / T ≥ 3) = P(T ≥ 2)."
+    }
+  ]
+}

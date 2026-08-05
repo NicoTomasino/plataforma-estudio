@@ -1,0 +1,104 @@
+{
+  "preguntas": [
+    {
+      "id": "u3-p1",
+      "enunciado": "¿Cuál es la diferencia principal entre una variable aleatoria discreta y una continua?",
+      "opciones": [
+        "La discreta toma valores en un conjunto 'separado' (por ejemplo, enteros); la continua puede tomar cualquier valor de un intervalo real",
+        "La variable discreta siempre es negativa",
+        "La variable continua no tiene función de distribución acumulada",
+        "No hay ninguna diferencia relevante"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Una v.a. discreta toma valores separados (con un 'salto' entre uno y el siguiente); una continua puede tomar cualquier valor real dentro de un intervalo."
+    },
+    {
+      "id": "u3-p2",
+      "enunciado": "Para que p(x) sea una función de masa de probabilidad (fmp) válida, se debe cumplir que:",
+      "opciones": [
+        "p(x) puede ser negativa si es un valor pequeño",
+        "p(xᵢ) ≥ 0 para todo i, y la suma de todos los p(xᵢ) es igual a 1",
+        "p(x) siempre vale 0,5",
+        "La suma de todos los p(xᵢ) debe ser menor que 1"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las dos condiciones son: todos los valores de p(xᵢ) son ≥ 0, y la suma de todos ellos es exactamente 1."
+    },
+    {
+      "id": "u3-p3",
+      "enunciado": "Si X ~ Bi(n, p) (distribución Binomial), ¿cuáles son su esperanza y su varianza?",
+      "opciones": [
+        "E(X) = p, V(X) = p(1−p)",
+        "E(X) = n·p, V(X) = n·p·(1−p)",
+        "E(X) = n, V(X) = p",
+        "E(X) = 1/p, V(X) = (1−p)/p²"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Para la Binomial: E(X) = n·p y V(X) = n·p·(1−p). (Las fórmulas E(X)=p y V(X)=p(1−p) son las de la Bernoulli.)"
+    },
+    {
+      "id": "u3-p4",
+      "enunciado": "¿Qué caracteriza a una variable aleatoria Geométrica frente a una Binomial?",
+      "opciones": [
+        "En la Geométrica el número de repeticiones NO es fijo: se cuenta cuántos intentos hacen falta hasta el primer éxito",
+        "En la Geométrica siempre hay más de dos resultados posibles por prueba",
+        "La Geométrica no tiene parámetro p",
+        "La Geométrica solo puede aplicarse a lanzamientos de dados"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "A diferencia de la Binomial (n fijo), en la Geométrica el experimento se repite hasta lograr el primer éxito, así que el número de repeticiones es aleatorio."
+    },
+    {
+      "id": "u3-p5",
+      "enunciado": "La distribución de Poisson es una buena aproximación de la Binomial cuando (regla empírica vista en el apunte):",
+      "opciones": [
+        "n es pequeño y p es grande",
+        "n es grande (>30), p es pequeño (≤0,01) y n·p ≤ 20",
+        "p = 0,5 siempre",
+        "Nunca se puede aproximar una por la otra"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Poisson es la distribución límite de la Binomial cuando λ=n·p se mantiene fijo, n→∞ y p→0; la regla empírica es n>30, p≤0,01 y n·p≤20."
+    },
+    {
+      "id": "u3-p6",
+      "enunciado": "Para una variable aleatoria continua X, ¿cuánto vale P(X = a) para cualquier valor real a?",
+      "opciones": ["Depende del valor de f(a)", "Siempre es 0", "Siempre es 1", "Es igual a F(a)"],
+      "respuestaCorrecta": 1,
+      "explicacion": "En variables continuas, la probabilidad de un único punto es siempre 0: P(X=a) = ∫ₐᵃ f(x)dx = F(a) − F(a) = 0."
+    },
+    {
+      "id": "u3-p7",
+      "enunciado": "La función de densidad f(x) de una v.a. continua debe cumplir que:",
+      "opciones": [
+        "f(x) ≤ 1 para todo x",
+        "f(x) ≥ 0 para todo x, y el área bajo toda la curva (integral en ℝ) es igual a 1",
+        "f(x) es siempre directamente una probabilidad",
+        "f(x) debe ser una función decreciente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "f(x) puede ser mayor que 1 en un punto (no es una probabilidad), pero debe ser no negativa y el área total bajo la curva debe ser 1."
+    },
+    {
+      "id": "u3-p8",
+      "enunciado": "Si X ~ U(a,b) (distribución Uniforme), ¿cuál es su esperanza E(X)?",
+      "opciones": ["(a+b) / 2", "(b−a) / 12", "a · b", "(b−a)² / 12"],
+      "respuestaCorrecta": 0,
+      "explicacion": "E(X) = (a+b)/2. La varianza es V(X) = (b−a)²/12."
+    },
+    {
+      "id": "u3-p9",
+      "enunciado": "Para estandarizar una variable X ~ N(μ, σ²) y poder usar la tabla de la normal estándar, se calcula:",
+      "opciones": ["Z = X − μ", "Z = X / σ", "Z = (X − μ) / σ", "Z = μ / X"],
+      "respuestaCorrecta": 2,
+      "explicacion": "La variable estandarizada Z = (X−μ)/σ tiene distribución N(0,1), lo que permite usar la tabla de Φ."
+    },
+    {
+      "id": "u3-p10",
+      "enunciado": "Si el tiempo entre llegadas de clientes sigue un proceso de Poisson de tasa λ, ¿qué distribución sigue el tiempo transcurrido entre dos llegadas sucesivas?",
+      "opciones": ["Binomial(λ)", "Normal(λ, λ)", "Exponencial(λ)", "Uniforme(0, λ)"],
+      "respuestaCorrecta": 2,
+      "explicacion": "Si la ocurrencia de eventos sigue un proceso de Poisson de parámetro λ, el tiempo entre dos eventos sucesivos sigue una distribución Exponencial de parámetro λ."
+    }
+  ]
+}

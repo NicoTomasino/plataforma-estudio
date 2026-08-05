@@ -1,0 +1,29 @@
+{
+  "preguntas": [
+    {
+      "id": "u7-e1",
+      "enunciado": "Explique la diferencia entre un error de tipo I y un error de tipo II en una prueba de hipótesis, y por qué en general se considera más grave el error de tipo I.",
+      "respuestaModelo": "Un error de tipo I consiste en rechazar H0 cuando en realidad es verdadera (su probabilidad es α); un error de tipo II consiste en NO rechazar H0 cuando en realidad es falsa (su probabilidad es β). Se considera más grave el error de tipo I porque H0 es la hipótesis que se supone cierta a priori (la creencia previa, o la afirmación que no se debe rechazar sin evidencia fuerte), por lo que rechazarla erróneamente suele tener consecuencias más serias que no rechazarla cuando debería haberse rechazado."
+    },
+    {
+      "id": "u7-e2",
+      "enunciado": "Un fabricante de rociadores contra incendios afirma que la temperatura de activación promedio es 130°. Se toma una muestra de n=9 sistemas, con x̄=131,08°, y se sabe que la distribución es normal con σ=1,5°. Plantee las hipótesis nula y alternativa adecuadas, y calcule el estadístico de prueba z.",
+      "respuestaModelo": "Como se quiere verificar si los datos contradicen la afirmación del fabricante (en cualquier dirección), se plantea H0: μ=130 vs H1: μ≠130 (test de dos colas). El estadístico de prueba es z = (x̄−μ0)/(σ/√n) = (131,08−130)/(1,5/√9) = 1,08/0,5 = 2,16."
+    },
+    {
+      "id": "u7-e3",
+      "enunciado": "En un sondeo a 6000 hogares, 335 comprarían un nuevo producto con sabor picante. Un estudio previo indicaba que el 5% de los hogares lo compraría. Plantee el test para determinar si el interés aumentó, y calcule el estadístico de prueba (sin buscar el valor crítico en tabla).",
+      "respuestaModelo": "Se plantea H0: p=0,05 vs H1: p>0,05 (test de cola superior, porque se quiere ver si el interés AUMENTÓ). La proporción muestral es p̂=335/6000≈0,0558. El estadístico de prueba es z = (p̂−p0)/√(p0(1−p0)/n) = (0,0558−0,05)/√(0,05·0,95/6000) ≈ 2,073."
+    },
+    {
+      "id": "u7-e4",
+      "enunciado": "¿Qué distribución sigue el estadístico de prueba para contrastar una hipótesis sobre la varianza de una población (H0: σ=σ0), y bajo qué supuesto es válido este procedimiento?",
+      "respuestaModelo": "El estadístico χ² = (n−1)·s²/σ0² sigue una distribución Ji-cuadrado con n−1 grados de libertad bajo H0. Este procedimiento es válido únicamente si la muestra proviene de una población con distribución normal."
+    },
+    {
+      "id": "u7-e5",
+      "enunciado": "En un problema de regresión con n=17, se obtuvo b=3,73, error estándar de la estimación sₑ=28,654 y Sxx=871,56. Calcule el error estándar de la pendiente sb, y plantee (sin resolver) el estadístico para probar si existe regresión.",
+      "respuestaModelo": "sb = sₑ/√Sxx = 28,654/√871,56 ≈ 0,9706. Para probar si existe regresión se plantea H0: β=0 vs H1: β≠0, con estadístico de prueba t = b/sb = 3,73/0,9706, que se compara contra los valores críticos ±t_(α/2; n−2) de la distribución t con n−2=15 grados de libertad."
+    }
+  ]
+}

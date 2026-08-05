@@ -1,0 +1,94 @@
+{
+  "preguntas": [
+    {
+      "id": "u1-p1",
+      "enunciado": "¿Qué rama de la estadística describe, analiza y representa un conjunto de datos con métodos numéricos y gráficos, sin hacer generalizaciones a partir de una muestra?",
+      "opciones": ["Estadística inferencial", "Estadística descriptiva", "Teoría de la probabilidad", "Teoría de muestras"],
+      "respuestaCorrecta": 1,
+      "explicacion": "La estadística descriptiva describe, analiza y representa un grupo de datos con métodos numéricos y gráficos. La inferencial, en cambio, usa una muestra para hacer generalizaciones sobre una población."
+    },
+    {
+      "id": "u1-p2",
+      "enunciado": "En el ejemplo de la edad media de los estudiantes de la Unnoba, tomando una muestra de 10 alumnos por carrera, ¿qué es 'la edad media de los estudiantes de la muestra'?",
+      "opciones": ["Población", "Parámetro", "Estadístico", "Individuo"],
+      "respuestaCorrecta": 2,
+      "explicacion": "El estadístico es una función definida sobre los valores numéricos de una muestra. El parámetro, en cambio, se define sobre la población."
+    },
+    {
+      "id": "u1-p3",
+      "enunciado": "La frecuencia relativa acumulada Fᵢ de la clase xᵢ se calcula como:",
+      "opciones": ["nᵢ / N", "Nᵢ / N", "nᵢ − nᵢ₋₁", "N / nᵢ"],
+      "respuestaCorrecta": 1,
+      "explicacion": "Fᵢ es el cociente entre la frecuencia absoluta acumulada (Nᵢ) y el total de observaciones (N)."
+    },
+    {
+      "id": "u1-p4",
+      "enunciado": "Según el criterio visto en la unidad para elegir el número k de intervalos al agrupar datos, ¿cuál es la fórmula usada?",
+      "opciones": ["k = N / 2", "k = √N", "k = log₂(N)", "k = N − 1"],
+      "respuestaCorrecta": 1,
+      "explicacion": "El criterio utilizado es k = √N, donde N es el número de observaciones."
+    },
+    {
+      "id": "u1-p5",
+      "enunciado": "En el ejemplo de los pesos de 21 personas (39, 40, 42, 49, 51, 54, 54, 57, 58, 58, 58, 59, 59, 63, 66, 68, 69, 70, 70, 71, 72), ¿cuál es la moda de los datos sin agrupar?",
+      "opciones": ["54", "58", "59", "70"],
+      "respuestaCorrecta": 1,
+      "explicacion": "58 es el valor que más se repite en el conjunto de datos (3 veces)."
+    },
+    {
+      "id": "u1-p6",
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre la media aritmética es correcta?",
+      "opciones": [
+        "No se ve afectada por valores extremos",
+        "La suma de las desviaciones de los valores respecto de la media es siempre cero",
+        "Siempre coincide con uno de los valores observados",
+        "Es más difícil de calcular que la mediana"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Una propiedad de la media es que Σ(xᵢ − x̄) = 0. Además, es muy sensible a valores extremos y puede no coincidir con ningún valor observado."
+    },
+    {
+      "id": "u1-p7",
+      "enunciado": "¿Qué mide el coeficiente de variación (CV)?",
+      "opciones": [
+        "El cociente entre la desviación típica y la media, usado para comparar la dispersión de dos poblaciones",
+        "La diferencia entre el tercer y el primer cuartil",
+        "El número de picos de un histograma",
+        "La proporción de valores atípicos en la muestra"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "CV = s / x̄. Es la medida de dispersión más usada para comparar poblaciones, y solo debe calcularse cuando todos los valores son positivos."
+    },
+    {
+      "id": "u1-p8",
+      "enunciado": "Según el índice de asimetría de Yule-Bowley, si As es negativo, la distribución es:",
+      "opciones": ["Simétrica", "Asimétrica positiva", "Asimétrica negativa", "Bimodal"],
+      "respuestaCorrecta": 2,
+      "explicacion": "As positivo indica asimetría positiva; As negativo, asimetría negativa. El índice cumple −1 < As < 1."
+    },
+    {
+      "id": "u1-p9",
+      "enunciado": "Una observación se considera un valor atípico EXTREMO si está más allá de:",
+      "opciones": [
+        "1,5·fs del cuartil más cercano",
+        "3·fs del cuartil más cercano",
+        "1 desviación típica de la media",
+        "El rango completo de los datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Más allá de 1,5·fs (y hasta 3·fs) es un valor atípico moderado; más allá de 3·fs es extremo."
+    },
+    {
+      "id": "u1-p10",
+      "enunciado": "En la varianza muestral s², ¿por qué se divide por N−1 en lugar de por N?",
+      "opciones": [
+        "Porque es más fácil de calcular",
+        "Porque reduce el error al aproximar la varianza poblacional a partir de una muestra",
+        "Porque N siempre es un número par",
+        "No hay ninguna razón particular, es una convención arbitraria"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La teoría matemática dice que, al aproximar la varianza de una población a partir de una muestra, el error cometido es menor dividiendo por N−1 en vez de por N."
+    }
+  ]
+}

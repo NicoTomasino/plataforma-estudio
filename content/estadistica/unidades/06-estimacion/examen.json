@@ -1,0 +1,29 @@
+{
+  "preguntas": [
+    {
+      "id": "u6-e1",
+      "enunciado": "Se supone que la porosidad al helio (en %) de muestras de carbón está normalmente distribuida con una desviación estándar verdadera de 0,75. Calcule un intervalo de confianza del 95% para el verdadero promedio de porosidad de una veta, si el promedio de porosidad de 20 especímenes es 4,85.",
+      "respuestaModelo": "Como σ=0,75 es conocida y la población es normal, se usa z_(0,025)=1,96. El intervalo es x̄ ± 1,96·σ/√n = 4,85 ± 1,96·(0,75/√20) = 4,85 ± 0,3288, es decir (4,5212; 5,1787)."
+    },
+    {
+      "id": "u6-e2",
+      "enunciado": "¿Cuánto debe aumentar el tamaño muestral n si se quiere que la longitud W de un intervalo de confianza para μ se reduzca a la mitad, manteniendo el mismo nivel de confianza? Justifique.",
+      "respuestaModelo": "Como el ancho es w = 2·z_(α/2)·σ/√n, despejando n se obtiene n = (2·z_(α/2)·σ/w)², es decir n es inversamente proporcional a w². Si se quiere reducir w a la mitad (w/2), el nuevo tamaño de muestra resulta n2 = (2·z_(α/2)·σ/(w/2))² = 4·(2·z_(α/2)·σ/w)² = 4·n1. Es decir, hay que CUADRUPLICAR el tamaño de la muestra para reducir el ancho del intervalo a la mitad."
+    },
+    {
+      "id": "u6-e3",
+      "enunciado": "En una prueba de dureza Brinell, una muestra de tamaño 50 dio un promedio muestral de 64,3 y una desviación estándar muestral de 6,9. Calcule una cota inferior de confianza del 99% para la dureza real.",
+      "respuestaModelo": "Se busca z tal que 1−α=0,99, es decir z=z_0,01=2,33. La cota inferior es x̄ − z·s/√n = 64,3 − 2,33·(6,9/√50) ≈ 62,026. Con 99% de confianza, la dureza Brinell real de especímenes de este material es mayor a 62,026."
+    },
+    {
+      "id": "u6-e4",
+      "enunciado": "Un psicólogo entrevistó a 150 ejecutivos de alto nivel y encontró que el 42% no podía sumar fracciones correctamente. Estime el error estándar de la proporción muestral.",
+      "respuestaModelo": "El error estándar estimado de p̂ es σ̂_p̂ = √(p̂(1−p̂)/n) = √(0,42·0,58/150) = √0,001624 ≈ 0,0403."
+    },
+    {
+      "id": "u6-e5",
+      "enunciado": "¿Por qué el intervalo de confianza para la varianza (o desviación estándar) de una población, basado en la distribución Ji-cuadrado, solo es válido si la población de origen es normal, a diferencia de los intervalos de confianza para la media con muestra grande?",
+      "respuestaModelo": "El resultado (n−1)·S²/σ² ~ χ²(n−1) se deduce específicamente para muestras provenientes de una población normal; no existe un resultado equivalente al Teorema Central del Límite que garantice esta distribución (ni siquiera aproximadamente) cuando n es grande y la población no es normal. En cambio, los intervalos de confianza para la media con muestra grande sí pueden usarse para cualquier distribución poblacional, porque el TCL garantiza que X̄ es aproximadamente normal sin importar la distribución de origen."
+    }
+  ]
+}
