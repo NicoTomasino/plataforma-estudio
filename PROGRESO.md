@@ -185,12 +185,52 @@ con el modo local.
    `CLAUDE.md` de no inventar contenido, hace falta que el usuario consiga
    y agregue ese material fuente antes de poder generar `content/analisis-matematico/`.
 
+## Decisión del usuario: por ahora, modo gratis
+El usuario prefiere dejar el examinador en modo local (autoevaluación,
+gratis) por ahora. **No** hace falta que setee `ANTHROPIC_API_KEY` en
+Render todavía — el sitio en producción ya funciona 100% gratis tal cual
+está.
+
+## Idea a futuro: freemium para la corrección con IA
+El usuario quiere evaluar más adelante un modelo freemium: gratis con
+autoevaluación (como hoy), y una **suscripción mensual** (~5 USD/mes, precio
+a definir) que habilite corrección instantánea con IA "sin límite" (uso
+razonable) durante ese mes — no es pago por respuesta suelta. Todavía
+**no se empezó a construir** — falta bastante más que código:
+- Elegir procesador de pagos (Stripe es la opción estándar; soporta
+  suscripciones recurrentes de forma nativa, encaja bien con este modelo).
+- Sistema de cuentas de usuario (hoy la app no tiene login/registro —
+  necesario para saber quién pagó y habilitarle el modo IA).
+- Armar el flujo de checkout + webhook de Stripe para activar/desactivar
+  el acceso según el estado de la suscripción.
+- Legales mínimos: términos de servicio, política de cancelación/reembolso.
+
+## Bug crítico resuelto: pantalla en blanco por bloqueadores de anuncios
+Después de publicar, el usuario reportó que la web le aparecía en blanco
+(probó con Brave, que trae Shields activado por defecto). Diagnóstico:
+`app.js` importaba de forma estática `cookie-banner.js`, que a su vez
+importaba `ads.js` — y **cualquier bloqueador de anuncios (Brave Shields,
+uBlock, AdBlock) bloquea por defecto cualquier archivo llamado `ads.js`**,
+solo por el nombre, sin mirar el contenido. Al fallar esa importación
+estática, todo el módulo `app.js` fallaba en cascada y no se ejecutaba
+nada — ni siquiera el router de la app, que no tiene nada que ver con
+anuncios.
+
+**Arreglado**: se eliminaron `public/js/ads.js` y `public/js/cookie-banner.js`;
+esa lógica (chiquita) ahora vive inline dentro de `app.js`, envuelta en
+`try/catch`, así un bloqueo nunca puede tumbar el resto de la app. Probado
+localmente (sintaxis OK, `/js/ads.js` y `/js/cookie-banner.js` dan 404 como
+se espera, la app carga bien). **Falta pushear para que el fix llegue a
+producción** — es el paso más urgente ahora mismo, la web en producción
+sigue rota para usuarios con bloqueador hasta que se suba.
+
 ## Próximo paso concreto
-1. Confirmar con el usuario si commiteo y pusheo el examinador con IA (dispara
-   redeploy en Render).
-2. Usuario: crear cuenta en console.anthropic.com, generar API key, setearla
-   en Render (`ANTHROPIC_API_KEY` + `EVALUADOR=anthropic`) y probar un examen
-   real.
+1. **Urgente**: pushear a GitHub (`git push origin main`) para que Render
+   redeploye con el fix de la pantalla en blanco. El push anterior falló
+   por falta de credenciales en la sesión — el usuario tiene que correrlo
+   él mismo con `!git push origin main`, o reautenticar la sesión.
+2. Cuando el usuario decida avanzar con el modelo freemium: retomar la
+   sección de arriba (elegir Stripe, definir precio y flujo).
 3. En paralelo: usuario decide si sigue con AdSense (pasos 3-5 de arriba) o
    consigue los PDFs de Análisis Matemático para poder avanzar la segunda
    materia.
