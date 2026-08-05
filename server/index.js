@@ -1,10 +1,15 @@
 import express from 'express';
 import path from 'node:path';
 import { listarMaterias, obtenerMateria, obtenerApunte, obtenerQuiz, obtenerExamen } from './content.js';
-import { evaluar } from './evaluadores/local.js';
+import { evaluar } from './evaluadores/index.js';
+import { limitarPorIp } from './rateLimit.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Necesario en Render (y cualquier hosting detrás de proxy) para que
+// req.ip refleje la IP real del cliente y no la del proxy interno.
+app.set('trust proxy', 1);
 
 app.use(express.json());
 app.use(express.static(path.join(process.cwd(), 'public')));
@@ -74,7 +79,9 @@ app.get('/api/materias/:id/unidades/:unidadId/examen', async (req, res) => {
   }
 });
 
-app.post('/api/materias/:id/unidades/:unidadId/examen/:preguntaId/evaluar', async (req, res) => {
+const limiteEvaluar = limitarPorIp({ maxPorMinuto: 10 });
+
+app.post('/api/materias/:id/unidades/:unidadId/examen/:preguntaId/evaluar', limiteEvaluar, async (req, res) => {
   try {
     const examen = await obtenerExamen(req.params.id, req.params.unidadId);
     const pregunta = examen?.preguntas.find((p) => p.id === req.params.preguntaId);

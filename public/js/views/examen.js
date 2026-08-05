@@ -65,8 +65,21 @@ export async function renderExamen(container, materiaId, unidadId) {
         return;
       }
 
-      dibujarAutoevaluacion(pregunta, respuestaAlumno, evaluacion.respuestaModelo);
+      if (evaluacion.modo === 'automatica') {
+        dibujarCorreccionAutomatica(pregunta, respuestaAlumno, evaluacion);
+      } else {
+        dibujarAutoevaluacion(pregunta, respuestaAlumno, evaluacion.respuestaModelo);
+      }
     });
+  }
+
+  function siguientePregunta() {
+    indice += 1;
+    if (indice < preguntas.length) {
+      dibujarPregunta();
+    } else {
+      dibujarResumen();
+    }
   }
 
   function dibujarAutoevaluacion(pregunta, respuestaAlumno, respuestaModelo) {
@@ -95,14 +108,38 @@ export async function renderExamen(container, materiaId, unidadId) {
           respuestaModelo,
           autoevaluacion: boton.dataset.nivel,
         });
-
-        indice += 1;
-        if (indice < preguntas.length) {
-          dibujarPregunta();
-        } else {
-          dibujarResumen();
-        }
+        siguientePregunta();
       });
+    });
+  }
+
+  function dibujarCorreccionAutomatica(pregunta, respuestaAlumno, evaluacion) {
+    const nivel = evaluacion.correcta.charAt(0).toUpperCase() + evaluacion.correcta.slice(1);
+
+    container.innerHTML = `
+      ${breadcrumb}
+      <h2>${tituloUnidad}</h2>
+      <p class="estado">Pregunta ${indice + 1} de ${preguntas.length}</p>
+      <p class="pregunta__enunciado">${pregunta.enunciado}</p>
+      <p class="examen-etiqueta">Tu respuesta:</p>
+      <p class="examen-respuesta">${respuestaAlumno || '(sin responder)'}</p>
+      <p class="examen-etiqueta">Respuesta modelo:</p>
+      <p class="examen-respuesta">${evaluacion.respuestaModelo}</p>
+      <p class="examen-etiqueta">Corrección (IA): ${nivel}</p>
+      <p class="examen-respuesta">${evaluacion.feedback}</p>
+      <button type="button" class="boton boton--activo">
+        ${indice + 1 < preguntas.length ? 'Siguiente pregunta' : 'Ver resultado'}
+      </button>
+    `;
+
+    container.querySelector('button').addEventListener('click', () => {
+      resultados.push({
+        preguntaId: pregunta.id,
+        respuestaAlumno,
+        respuestaModelo: evaluacion.respuestaModelo,
+        autoevaluacion: nivel,
+      });
+      siguientePregunta();
     });
   }
 

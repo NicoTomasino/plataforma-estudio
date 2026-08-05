@@ -99,29 +99,31 @@ Lo que ya quedó preparado en el repo:
   las 3 vistas de contenido intactas), `/ads.txt` y `/privacidad.html`
   responden 200, y los módulos JS nuevos pasan chequeo de sintaxis.
 
-### Lo que falta y SOLO lo puede hacer el usuario (cuentas y plata propias)
+### Hecho por el usuario (cuentas propias)
+1. ✅ **Repo en GitHub**: [github.com/NicoTomasino/plataforma-estudio](https://github.com/NicoTomasino/plataforma-estudio),
+   pusheado a `main`.
+2. ✅ **Render**: servicio web creado y desplegado. URL en producción:
+   **https://plataforma-estudio-fuov.onrender.com** — verificada
+   funcionando end-to-end (home, API, contenido real de Estadística,
+   `/privacidad.html`, `/ads.txt`, todo responde 200).
 
-1. **Crear un repo en GitHub** (público o privado, cualquiera sirve para
-   Render) y pushear este repo local ahí. Yo puedo preparar los commits,
-   pero no puedo crear el repo remoto ni loguearme con tu cuenta de GitHub.
-2. **Crear cuenta en Render** (render.com), conectarla a GitHub, y crear un
-   "New Web Service" apuntando a este repo — con `render.yaml` presente,
-   Render debería proponer la config automáticamente. Al terminar el
-   deploy, la app queda en una URL tipo
-   `https://plataforma-estudio-xxxx.onrender.com`.
-3. **Crear cuenta de Google AdSense**, agregar el sitio (con la URL de
-   Render) y esperar la revisión de Google (puede tardar de días a un par
-   de semanas). Durante el alta, Google te da un ID de publisher
+### Lo que falta y SOLO lo puede hacer el usuario (cuentas y plata propias)
+3. **Crear cuenta de Google AdSense**, agregar el sitio con la URL de Render
+   de arriba, y esperar la revisión de Google (puede tardar de días a un
+   par de semanas). Durante el alta, Google da un ID de publisher
    (`ca-pub-XXXXXXXXXXXXXXXX`).
 4. Con ese ID: completar `ADSENSE_CLIENT_ID` en `public/js/config.js` y
    descomentar la línea de `public/ads.txt` con el ID real. Pushear el
    cambio — Render redeploya solo. Recomendado: activar **Auto ads** desde
-   el panel de AdSense (Google decide dónde poner los anuncios sin tener
-   que armar `<ins>` a mano en cada vista).
-5. Completar el email de contacto en `public/privacidad.html` (dejé un
-   `TODO` a propósito en vez de poner tu email sin confirmarlo primero).
-6. (Opcional, más adelante) Comprar un dominio propio y configurarlo en
-   Render — no bloquea nada de lo anterior.
+   el panel de AdSense.
+5. Completar el email de contacto en `public/privacidad.html` (quedó un
+   `TODO` a propósito).
+6. (Opcional) Comprar un dominio propio y configurarlo en Render.
+7. **Para el examinador con IA** (ver sección siguiente): crear una cuenta
+   en [console.anthropic.com](https://console.anthropic.com), generar una
+   API key, y configurarla como variable de entorno — tanto local (archivo
+   `.env`, ya excluido por `.gitignore`) como en Render (Dashboard →
+   Environment).
 
 ### Expectativa realista
 Publicar + activar AdSense no genera ingresos el mismo día: hay que esperar
@@ -129,19 +131,69 @@ la aprobación de Google, y después los ingresos dependen del tráfico real
 al sitio (visitas, no solo que exista). Con audiencia chica o nula, los
 ingresos van a ser mínimos hasta que haya gente usando la plataforma.
 
+## Examinador conversacional con la API de Anthropic (paso 6, parcial)
+
+Se implementó la mitad de código del paso 6 del roadmap (la otra mitad,
+segunda materia, sigue bloqueada — ver abajo). El modo Examen ahora puede
+corregir con IA real en vez de autoevaluación, manteniendo compatibilidad
+con el modo local.
+
+- **Modelo elegido: Claude Haiku 4.5** — decisión tomada con el usuario:
+  es una tarea simple (comparar una respuesta corta contra una respuesta
+  modelo), y como la app todavía no genera ingresos, se prioriza el costo
+  más bajo (u$s1/u$s5 por millón de tokens) sobre la calidad máxima.
+- `server/evaluadores/anthropic.js` (nuevo): `evaluar({ pregunta,
+  respuestaAlumno, respuestaModelo })` llama a Claude con **structured
+  outputs** (`output_config.format` con `json_schema`) para forzar una
+  respuesta `{ evaluacion: 'correcta'|'parcial'|'incorrecta', feedback }`
+  parseable de forma confiable. Devuelve `{ modo: 'automatica', correcta,
+  feedback, respuestaModelo }`.
+- `server/evaluadores/index.js` (nuevo, dispatcher): usa
+  `evaluadores/anthropic.js` solo si `EVALUADOR=anthropic` **y**
+  `ANTHROPIC_API_KEY` están seteadas; si no, cae a `evaluadores/local.js`
+  (autoevaluación) con un aviso por consola — el modo Examen nunca se
+  rompe por falta de configuración.
+- `server/rateLimit.js` (nuevo): limitador simple por IP (10 req/minuto)
+  aplicado **solo** a la ruta `POST .../examen/:preguntaId/evaluar` — es la
+  única que cuesta dinero real (llama a la API de Anthropic), así que es la
+  que hay que proteger de abuso una vez que el sitio sea público. Probado:
+  el request #11 en un minuto da `429`.
+- `server/index.js`: agregado `app.set('trust proxy', 1)` — necesario en
+  Render (detrás de un proxy) para que el rate limit identifique la IP real
+  de cada visitante y no la del proxy interno.
+- `public/js/views/examen.js`: ahora distingue `evaluacion.modo`. Si es
+  `'automatica'`, muestra el veredicto de Claude (Correcta/Parcial/
+  Incorrecta) + su feedback y un botón "Siguiente"; si es
+  `'autoevaluacion'` (el caso de hoy, sin key configurada), sigue con el
+  flujo anterior de autoevaluación manual. El resumen final cuenta ambos
+  casos de la misma forma.
+- **Verificado sin key real** (no tengo ni debo tener la key del usuario):
+  servidor arranca igual con y sin `EVALUADOR=anthropic`; con la variable
+  puesta pero sin key, avisa por consola y cae a local; el endpoint
+  `evaluar` sigue funcionando (`{"modo":"autoevaluacion",...}`); rate limit
+  probado con 11 requests seguidos. **Falta probar el camino real con
+  Claude** — eso requiere que el usuario ponga su propia
+  `ANTHROPIC_API_KEY`.
+- **Sin commitear todavía**: estos cambios están en el working directory
+  pero no se hizo `git commit`/`push` — a diferencia del primer commit
+  grande, esta vez conviene confirmar con el usuario antes de pushear (un
+  push dispara un redeploy real en Render).
+
 ## Roadmap de CLAUDE.md — pendiente
-6. (Futuro) Segunda materia (Análisis Matemático, misma estructura de
-   `/content`) + examinador conversacional real con la API de Anthropic
-   (swap de `server/evaluadores/local.js` por una implementación que llame
-   a Claude, respetando la firma de `evaluar()`). Sigue pendiente; se
-   priorizó la publicación por pedido explícito del usuario.
+6. (Resto) Segunda materia (Análisis Matemático) — **bloqueada**: no hay
+   PDFs de esa cátedra en `/material-fuente` todavía. Por la regla de
+   `CLAUDE.md` de no inventar contenido, hace falta que el usuario consiga
+   y agregue ese material fuente antes de poder generar `content/analisis-matematico/`.
 
 ## Próximo paso concreto
-Que el usuario haga los pasos 1-3 de la sección de arriba (GitHub, Render,
-AdSense) — son cuentas que solo él puede crear. Cuando estén listos, retomo
-para el paso 4 (activar el ID de AdSense) en cuanto lo tenga, y de ahí en
-más seguimos con el roadmap (segunda materia) o iterando sobre la
-publicación, según lo que priorice.
+1. Confirmar con el usuario si commiteo y pusheo el examinador con IA (dispara
+   redeploy en Render).
+2. Usuario: crear cuenta en console.anthropic.com, generar API key, setearla
+   en Render (`ANTHROPIC_API_KEY` + `EVALUADOR=anthropic`) y probar un examen
+   real.
+3. En paralelo: usuario decide si sigue con AdSense (pasos 3-5 de arriba) o
+   consigue los PDFs de Análisis Matemático para poder avanzar la segunda
+   materia.
 
 ## Cómo correr la app
 ```
@@ -150,3 +202,9 @@ npm start
 ```
 Sirve en `http://localhost:3000`. Las 7 unidades de Estadística ya tienen
 apuntes, práctica y examen con contenido real.
+
+Para probar la corrección de examen con IA real (opcional — sin esto usa
+autoevaluación local):
+```
+ANTHROPIC_API_KEY=sk-ant-... EVALUADOR=anthropic npm start
+```
